@@ -1,0 +1,12 @@
+c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\bin\Debug\FilmsCatalog.UI.exe.config
+c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\bin\Debug\FilmsCatalog.UI.exe
+c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\bin\Debug\FilmsCatalog.UI.pdb
+c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\bin\Debug\FilmsCatalog.Model.dll
+c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\bin\Debug\FilmsCatalog.Model.pdb
+c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\obj\Debug\FilmsCatalog.UI.csprojResolveAssemblyReference.cache
+c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\obj\Debug\FilmsCatalog.UI.Properties.Resources.resources
+c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\obj\Debug\FilmsCatalog.UI.csproj.GenerateResource.Cache
+c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\obj\Debug\FilmsCatalog.UI.exe
+c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\obj\Debug\FilmsCatalog.UI.pdb
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\obj\Debug\FilmsCatalog.UI.MainForm.resources
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\obj\Debug\FilmsCatalog.UI.EditForm.resources
