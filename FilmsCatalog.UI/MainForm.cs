@@ -28,7 +28,7 @@ namespace FilmsCatalog.UI
             RefreshList(repository.Films);
         }
 
-        // формирует лист по заданной коллекции 
+        //  формирует лист по заданной коллекции 
         public void RefreshList(IEnumerable<Film> filmParam)
         {
             Film_list.Items.Clear();
