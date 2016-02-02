@@ -25,17 +25,20 @@ namespace FilmsCatalog.UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            RefreshList(repository.Films);
+            RefreshCurrentList(repository.Films);
         }
 
-        //  формирует лист по заданной коллекции 
-        public void RefreshList(IEnumerable<Film> filmParam)
+        //формирует лист по заданной коллекции 
+        public void RefreshCurrentList(IEnumerable<Film> filmParam)
         {
             Film_list.Items.Clear();
             foreach(Film f in filmParam)
             {
                 Film_list.Items.Add(f.Title);
             }
+            edit_btn.Enabled = false;
+            delete_btn.Enabled = false;
+            Film_list.SelectedItem = null;
         }
         private void AddFiml_bnt_Click(object sender, EventArgs e)
         {          
@@ -45,7 +48,7 @@ namespace FilmsCatalog.UI
             DialogResult dr = editForm.ShowDialog();
             if (dr != DialogResult.OK)
                 repository.RemoveFilm(repository.Films.Count());
-            RefreshList(repository.Films);
+            RefreshCurrentList(repository.Films);
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -64,24 +67,44 @@ namespace FilmsCatalog.UI
 
             editForm = new EditForm(ref filmForEdit);
             editForm.ShowDialog();
-            RefreshList(repository.Films);
+            RefreshCurrentList(repository.Films);
             //возвращаем фокус
             Film_list.SelectedIndex = index;
         }
 
         private void Film_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            edit_btn.Enabled = true;
-            
-            year_lbl.Text = repository.Films
-                .Where(f => f.Title == Film_list.SelectedItem.ToString())
-                .FirstOrDefault().Year.ToString();
+            Film selectedFilm = null;
+            if (Film_list.SelectedItem != null)
+            {
+                edit_btn.Enabled = true;
+                delete_btn.Enabled = true;
 
-            description_lbl.Text = repository.Films
+                selectedFilm = repository.Films
                 .Where(f => f.Title == Film_list.SelectedItem.ToString())
-                .First().Description;
+                .FirstOrDefault();
+
+                category_lbl.Text = selectedFilm.Category;
+                year_lbl.Text = selectedFilm.Year.ToString();
+                description_lbl.Text = selectedFilm.Description;
+                upload_lbl.Text = selectedFilm.UploadDate.Value.ToShortDateString();
+            }
         }
 
-       
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            
+
+            var selectedFilm = repository.Films
+                .Where(f => f.Title == Film_list.SelectedItem.ToString())
+                .FirstOrDefault();
+            repository.RemoveFilm(selectedFilm.FilmID);  
+
+            RefreshCurrentList(repository.Films);
+
+          
+        }
+
+        
     }
 }

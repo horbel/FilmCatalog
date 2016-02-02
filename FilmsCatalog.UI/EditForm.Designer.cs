@@ -78,6 +78,7 @@
             this.cancel_btn.TabIndex = 3;
             this.cancel_btn.Text = "Отмена";
             this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
             // save_btn
             // 
@@ -87,7 +88,7 @@
             this.save_btn.TabIndex = 4;
             this.save_btn.Text = "Сохранить изменения";
             this.save_btn.UseVisualStyleBackColor = true;
-            this.save_btn.Click += new System.EventHandler(this.button2_Click);
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
             // category_combobox
             // 
@@ -108,7 +109,9 @@
             "Драма",
             "Документальный",
             "Вестерн ",
-            "Исторический "});
+            "Исторический ",
+            "Фантастика ",
+            "Мультфильм"});
             this.category_combobox.Location = new System.Drawing.Point(105, 44);
             this.category_combobox.Name = "category_combobox";
             this.category_combobox.Size = new System.Drawing.Size(220, 21);

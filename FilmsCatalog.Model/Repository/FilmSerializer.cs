@@ -21,7 +21,7 @@ namespace FilmsCatalog.Model.Repository
                     formatter.Serialize(fs, filmsParam);
                 }
             }
-            catch { throw new NotImplementedException("can not to serealire"); }
+            catch { throw new NotImplementedException("can not serealire"); }
         }
 
         public IEnumerable<Film> DeserializeFilm()
@@ -33,7 +33,7 @@ namespace FilmsCatalog.Model.Repository
                     return (formatter.Deserialize(fs) as IEnumerable<Film>);
                 }
             }
-            catch { throw new NotImplementedException("can not to deserealire"); }
+            catch { throw new NotImplementedException("can not deserealire"); }
         }
 
     }

@@ -32,8 +32,11 @@ namespace FilmsCatalog.Model.Repository
 
         public void AddFilm(Film filmParam)
         {
+            filmParam.Category = "Не выбрана";
+            filmParam.Year = "Не задан";
+            filmParam.FilmID = films.Count + 1;
+            filmParam.UploadDate = DateTime.Now.Date;
             films.Add(filmParam);
-            films.Last().FilmID = films.Count;
         }
 
         public void SerializeFilm()
