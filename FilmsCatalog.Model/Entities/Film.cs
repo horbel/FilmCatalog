@@ -14,6 +14,6 @@ namespace FilmsCatalog.Model.Entities
         public string Description { get; set; }
         public string Category { get; set; }
         public string Year { get; set; }
-        public DateTime? UploadDate { get; set; } 
+        public DateTime UploadDate { get; set; } 
     }
 }

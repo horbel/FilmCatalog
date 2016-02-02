@@ -35,7 +35,7 @@ namespace FilmsCatalog.Model.Repository
             filmParam.Category = "Не выбрана";
             filmParam.Year = "Не задан";
             filmParam.FilmID = films.Count + 1;
-            filmParam.UploadDate = DateTime.Now.Date;
+            filmParam.UploadDate = DateTime.Now;
             films.Add(filmParam);
         }
 
@@ -49,6 +49,10 @@ namespace FilmsCatalog.Model.Repository
                 .FirstOrDefault());         
         }
 
+        public void RemoveAll()
+        {
+            films.Clear();
+        }
         
 
         public IEnumerable<Film> Films

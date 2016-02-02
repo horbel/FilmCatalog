@@ -33,12 +33,7 @@ namespace FilmsCatalog.UI
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            if (title_textbox.Text == "" ||
-                new Regex(@"^\s+$").IsMatch(title_textbox.Text))
-            {
-                MessageBox.Show("Название фильма не может быть пустым", "Ошибка");
-            }
-            else
+            if (CheckFieldsValues())
             {
                 filmForEdit.Title = title_textbox.Text;
                 filmForEdit.Year = year_textbox.Text.ToString();
@@ -46,10 +41,27 @@ namespace FilmsCatalog.UI
                 filmForEdit.Category = category_combobox.Text;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            }    
-                   
-        }
+            }
 
+        }
+        //защита от дурака
+        private bool CheckFieldsValues()
+        {
+            bool flag = true;
+
+            if (title_textbox.Text == "" ||
+            new Regex(@"^\s+$").IsMatch(title_textbox.Text))
+            {
+                MessageBox.Show("Название фильма не может быть пустым", "Ошибка");
+                flag = false;
+            }
+            if (!(new Regex(@"^\d{4}$").IsMatch(year_textbox.Text) || (year_textbox.Text == "Не задан")))
+            {
+                MessageBox.Show("Введён некорректный год выпуска", "Ошибка");
+                flag = false;
+            }
+            return flag;
+        }
         private void cancel_btn_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

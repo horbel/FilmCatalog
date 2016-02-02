@@ -1,5 +1,4 @@
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Model\bin\Debug\FilmsCatalog.Model.dll
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Model\bin\Debug\FilmsCatalog.Model.pdb
-c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Model\obj\Debug\FilmsCatalog.Model.csprojResolveAssemblyReference.cache
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Model\obj\Debug\FilmsCatalog.Model.dll
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Model\obj\Debug\FilmsCatalog.Model.pdb

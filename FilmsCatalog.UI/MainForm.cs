@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -20,6 +21,13 @@ namespace FilmsCatalog.UI
         public MainForm()
         {
             InitializeComponent();
+            sort_combobox.SelectedIndex = 0;
+
+            foreach (Control c in infopanel_panel.Controls)
+            {
+                c.Visible = false;
+            }
+
             repository = new BinaryFilmRepository();
         }
 
@@ -32,7 +40,7 @@ namespace FilmsCatalog.UI
         public void RefreshCurrentList(IEnumerable<Film> filmParam)
         {
             Film_list.Items.Clear();
-            foreach(Film f in filmParam)
+            foreach (Film f in filmParam)
             {
                 Film_list.Items.Add(f.Title);
             }
@@ -41,7 +49,7 @@ namespace FilmsCatalog.UI
             Film_list.SelectedItem = null;
         }
         private void AddFiml_bnt_Click(object sender, EventArgs e)
-        {          
+        {
             Film newFilm = new Film();
             repository.AddFilm(newFilm);
             editForm = new EditForm(ref newFilm);
@@ -49,13 +57,15 @@ namespace FilmsCatalog.UI
             if (dr != DialogResult.OK)
                 repository.RemoveFilm(repository.Films.Count());
             RefreshCurrentList(repository.Films);
+            Film_list.SelectedIndex = repository.Films.Count() - 1;
+
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             repository.SerializeFilm();
         }
-        
+
         private void edit_btn_Click(object sender, EventArgs e)
         {
             //запоминаем индекс выделенного элемента
@@ -87,24 +97,60 @@ namespace FilmsCatalog.UI
                 category_lbl.Text = selectedFilm.Category;
                 year_lbl.Text = selectedFilm.Year.ToString();
                 description_lbl.Text = selectedFilm.Description;
-                upload_lbl.Text = selectedFilm.UploadDate.Value.ToShortDateString();
+                upload_lbl.Text = selectedFilm.UploadDate.ToString(new CultureInfo("en-GB"));
             }
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-            
-
             var selectedFilm = repository.Films
                 .Where(f => f.Title == Film_list.SelectedItem.ToString())
                 .FirstOrDefault();
-            repository.RemoveFilm(selectedFilm.FilmID);  
+            repository.RemoveFilm(selectedFilm.FilmID);
 
             RefreshCurrentList(repository.Films);
 
-          
         }
 
-        
+        private void showAll_btn_Click(object sender, EventArgs e)
+        {
+            RefreshCurrentList(repository.Films);
+            Film_list.SelectedIndex = 0;
+        }
+
+
+        private void edit_btn_EnabledChanged(object sender, EventArgs e)
+        {
+            foreach (Control c in infopanel_panel.Controls)
+            {
+                c.Visible = !c.Visible;
+            }
+        }
+
+        private void cler_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Вы действительно хотите удалить все фильмы?",
+                "Предупреждение", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                repository.RemoveAll();
+                RefreshCurrentList(repository.Films);
+            }
+        }
+
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+
+            //
+            //использовать regex
+            //
+            var neededFilm = repository.Films
+                .Where(f => f.Title == search_textbox.Text.ToString())
+                .FirstOrDefault();
+
+            if (neededFilm != null)
+                Film_list.SelectedIndex = neededFilm.FilmID-1;
+            
+        }
     }
 }
