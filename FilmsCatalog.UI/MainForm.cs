@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FilmsCatalog.Model.Repository;
@@ -17,18 +18,19 @@ namespace FilmsCatalog.UI
     {
         BinaryFilmRepository repository;
         EditForm editForm;
+        Stack<Film> stackForCancelDelete;  //for delete_btn and cancelDelete_btn 
 
         public MainForm()
         {
             InitializeComponent();
             sort_combobox.SelectedIndex = 0;
-
             foreach (Control c in infopanel_panel.Controls)
             {
                 c.Visible = false;
             }
 
             repository = new BinaryFilmRepository();
+            stackForCancelDelete = new Stack<Film>();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -46,40 +48,12 @@ namespace FilmsCatalog.UI
             }
             edit_btn.Enabled = false;
             delete_btn.Enabled = false;
-            Film_list.SelectedItem = null;
-        }
-        private void AddFiml_bnt_Click(object sender, EventArgs e)
-        {
-            Film newFilm = new Film();
-            repository.AddFilm(newFilm);
-            editForm = new EditForm(ref newFilm);
-            DialogResult dr = editForm.ShowDialog();
-            if (dr != DialogResult.OK)
-                repository.RemoveFilm(repository.Films.Count());
-            RefreshCurrentList(repository.Films);
-            Film_list.SelectedIndex = repository.Films.Count() - 1;
-
+            //Film_list.SelectedItem = null;
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             repository.SerializeFilm();
-        }
-
-        private void edit_btn_Click(object sender, EventArgs e)
-        {
-            //запоминаем индекс выделенного элемента
-            int index = Film_list.SelectedIndex;
-
-            var filmForEdit = repository.Films
-                .Where(f => f.Title == (string)Film_list.SelectedItem)
-                .FirstOrDefault();
-
-            editForm = new EditForm(ref filmForEdit);
-            editForm.ShowDialog();
-            RefreshCurrentList(repository.Films);
-            //возвращаем фокус
-            Film_list.SelectedIndex = index;
         }
 
         private void Film_list_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,14 +75,56 @@ namespace FilmsCatalog.UI
             }
         }
 
+        private void edit_btn_EnabledChanged(object sender, EventArgs e)
+        {
+            foreach (Control c in infopanel_panel.Controls)
+            {
+                c.Visible = !c.Visible;
+            }
+        }
+
+        #region Button_Click_Events
+
+        private void AddFiml_bnt_Click(object sender, EventArgs e)
+        {
+
+            Film newFilm = new Film();
+            repository.AddFilm(newFilm);
+            editForm = new EditForm(ref newFilm);
+            DialogResult dr = editForm.ShowDialog();
+            if (dr != DialogResult.OK)
+                repository.RemoveFilm(newFilm.FilmID);
+            RefreshCurrentList(repository.Films);
+            Film_list.SetSelected(repository.Films.Count() - 1, true);
+
+        }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            //запоминаем индекс выделенного элемента
+            int index = Film_list.SelectedIndex;
+
+            var filmForEdit = repository.Films
+                .Where(f => f.Title == (string)Film_list.SelectedItem)
+                .FirstOrDefault();
+
+            editForm = new EditForm(ref filmForEdit);
+            editForm.ShowDialog();
+            RefreshCurrentList(repository.Films);
+            //возвращаем фокус
+            //Film_list.SelectedItem = index;
+        }
+
         private void delete_btn_Click(object sender, EventArgs e)
         {
             var selectedFilm = repository.Films
                 .Where(f => f.Title == Film_list.SelectedItem.ToString())
-                .FirstOrDefault();
-            repository.RemoveFilm(selectedFilm.FilmID);
+                .Select(f => f).FirstOrDefault();
 
+            stackForCancelDelete.Push(selectedFilm);
+            repository.RemoveFilm(selectedFilm.FilmID);
             RefreshCurrentList(repository.Films);
+            cancelDelete_btn.Enabled = true;
 
         }
 
@@ -118,16 +134,7 @@ namespace FilmsCatalog.UI
             Film_list.SelectedIndex = 0;
         }
 
-
-        private void edit_btn_EnabledChanged(object sender, EventArgs e)
-        {
-            foreach (Control c in infopanel_panel.Controls)
-            {
-                c.Visible = !c.Visible;
-            }
-        }
-
-        private void cler_btn_Click(object sender, EventArgs e)
+        private void clear_btn_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Вы действительно хотите удалить все фильмы?",
                 "Предупреждение", MessageBoxButtons.YesNo);
@@ -144,13 +151,77 @@ namespace FilmsCatalog.UI
             //
             //использовать regex
             //
-            var neededFilm = repository.Films
-                .Where(f => f.Title == search_textbox.Text.ToString())
-                .FirstOrDefault();
+            string tempString = search_textbox.Text;
 
-            if (neededFilm != null)
-                Film_list.SelectedIndex = neededFilm.FilmID-1;
+            Regex regex = new Regex(tempString, RegexOptions.IgnoreCase |
+                                                RegexOptions.IgnorePatternWhitespace |
+                                                RegexOptions.Compiled);
+            //var neededFilm = repository.Films
+            //    .Where(f => f.Title == search_textbox.Text.ToString())
+            //    .FirstOrDefault();
+            List<Film> pointFilms = new List<Film>();
+
+            foreach (Film film in repository.Films)
+            {
+                if (regex.IsMatch(film.Title))
+                {
+                    pointFilms.Add(film);
+                }
+            }
+
+            if (pointFilms.Count != 0)
+                RefreshCurrentList(pointFilms);
+
+        }
+
+        private void cancelDelete_btn_Click(object sender, EventArgs e)
+        {
+
+            repository.AddFilm(stackForCancelDelete.Pop());
+            RefreshCurrentList(repository.Films);
+            Film_list.SetSelected(Film_list.Items.Count - 1, true);
+
+            if (stackForCancelDelete.Count == 0)
+                (sender as Button).Enabled = false;
+        }
+
+        bool descending = false;
+        private void sort_btn_Click(object sender, EventArgs e)
+        {
+            descending = !descending;
+
+            switch (sort_combobox.SelectedIndex)
+            {
+
+                case 0: //by title
+
+                    //List<string> tempFilms = new List<string>();
+                    //List<string> tempFilms2 = new List<string>();
+                    //foreach (string item in Film_list.Items)
+                    //    tempFilms.Add(item.ToString());
+                    //IEnumerable<string> sortedFimls =  tempFilms.OrderBy(s => s);
+                    //Film_list.Items.Clear();
+                    //Film_list.Items.AddRange(sortedFimls.ToArray<object>());
+                    //break;
+
+                    repository.SortByTitle(descending);
+                    RefreshCurrentList(repository.Films);
+                    break;
+                case 1:
+                    repository.SortByYear(descending);
+                    RefreshCurrentList(repository.Films);
+                    break;
+                case 2:
+                    repository.SortByUpload(descending);
+                    RefreshCurrentList(repository.Films);
+                    break;
+            }
             
         }
+
+
+        #endregion
+
+
     }
 }

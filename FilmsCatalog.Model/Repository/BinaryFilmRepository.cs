@@ -17,25 +17,27 @@ namespace FilmsCatalog.Model.Repository
     {
         private FilmSerializer serializer;
         private List<Film> films;
-
+        private static int ID;
         public BinaryFilmRepository()
         {
             serializer = new FilmSerializer();
 
             if(!File.Exists("films.dat"))
+            {
                 films = new List<Film>();
+                ID = 1;
+            }
+                
             else
             {
-                films = serializer.DeserializeFilm().ToList();  
+                films = serializer.DeserializeFilm().ToList();
+                ID = films.Count; 
             }
         }
 
         public void AddFilm(Film filmParam)
         {
-            filmParam.Category = "Не выбрана";
-            filmParam.Year = "Не задан";
-            filmParam.FilmID = films.Count + 1;
-            filmParam.UploadDate = DateTime.Now;
+            filmParam.FilmID = ID++;
             films.Add(filmParam);
         }
 
@@ -53,7 +55,31 @@ namespace FilmsCatalog.Model.Repository
         {
             films.Clear();
         }
-        
+
+        public void SortByTitle(bool descending)
+        {
+            if(descending)
+                films = films.OrderByDescending(f => f.Title).ToList();
+            
+            else
+                films = films.OrderBy(f => f.Title).ToList();
+        }
+
+        public void SortByYear(bool descending)
+        {
+            if (descending)
+                films = films.OrderByDescending(f => f.Year).ToList();
+            else
+                films = films.OrderBy(f => f.Year).ToList();
+        }
+
+        public void SortByUpload(bool descending)
+        {
+            if(descending)
+                films = films.OrderByDescending(f => f.UploadDate).ToList();
+            else
+                films = films.OrderBy(f => f.UploadDate).ToList();
+        }
 
         public IEnumerable<Film> Films
         {

@@ -39,7 +39,7 @@ namespace FilmsCatalog.UI
             this.upload_lbl = new System.Windows.Forms.Label();
             this.search_textbox = new System.Windows.Forms.TextBox();
             this.search_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.sort_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
             this.sort_combobox = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -91,7 +91,7 @@ namespace FilmsCatalog.UI
             this.edit_btn.Name = "edit_btn";
             this.edit_btn.Size = new System.Drawing.Size(100, 67);
             this.edit_btn.TabIndex = 3;
-            this.edit_btn.Text = "Редактировать";
+            this.edit_btn.Text = "Изменить данные";
             this.edit_btn.UseVisualStyleBackColor = false;
             this.edit_btn.EnabledChanged += new System.EventHandler(this.edit_btn_EnabledChanged);
             this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
@@ -163,17 +163,18 @@ namespace FilmsCatalog.UI
             this.search_btn.UseVisualStyleBackColor = true;
             this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
-            // button1
+            // sort_btn
             // 
-            this.button1.BackColor = System.Drawing.Color.LightBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(267, 528);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 22);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Сортировать по ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.sort_btn.BackColor = System.Drawing.Color.LightBlue;
+            this.sort_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.sort_btn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sort_btn.Location = new System.Drawing.Point(252, 528);
+            this.sort_btn.Name = "sort_btn";
+            this.sort_btn.Size = new System.Drawing.Size(137, 22);
+            this.sort_btn.TabIndex = 13;
+            this.sort_btn.Text = "Сортировать по ";
+            this.sort_btn.UseVisualStyleBackColor = false;
+            this.sort_btn.Click += new System.EventHandler(this.sort_btn_Click);
             // 
             // delete_btn
             // 
@@ -191,16 +192,18 @@ namespace FilmsCatalog.UI
             // 
             // sort_combobox
             // 
+            this.sort_combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sort_combobox.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sort_combobox.FormattingEnabled = true;
+            this.sort_combobox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.sort_combobox.ItemHeight = 14;
             this.sort_combobox.Items.AddRange(new object[] {
             "Названию",
             "Году выпуска",
             "Дате добавления"});
-            this.sort_combobox.Location = new System.Drawing.Point(410, 528);
+            this.sort_combobox.Location = new System.Drawing.Point(395, 528);
             this.sort_combobox.Name = "sort_combobox";
-            this.sort_combobox.Size = new System.Drawing.Size(121, 22);
+            this.sort_combobox.Size = new System.Drawing.Size(136, 22);
             this.sort_combobox.TabIndex = 15;
             // 
             // button3
@@ -287,6 +290,7 @@ namespace FilmsCatalog.UI
             // cancelDelete_btn
             // 
             this.cancelDelete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cancelDelete_btn.Enabled = false;
             this.cancelDelete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancelDelete_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cancelDelete_btn.Location = new System.Drawing.Point(2, 312);
@@ -295,6 +299,7 @@ namespace FilmsCatalog.UI
             this.cancelDelete_btn.TabIndex = 22;
             this.cancelDelete_btn.Text = "Отменить удаление";
             this.cancelDelete_btn.UseVisualStyleBackColor = false;
+            this.cancelDelete_btn.Click += new System.EventHandler(this.cancelDelete_btn_Click);
             // 
             // cler_btn
             // 
@@ -307,7 +312,7 @@ namespace FilmsCatalog.UI
             this.cler_btn.TabIndex = 23;
             this.cler_btn.Text = "Удалить всё";
             this.cler_btn.UseVisualStyleBackColor = false;
-            this.cler_btn.Click += new System.EventHandler(this.cler_btn_Click);
+            this.cler_btn.Click += new System.EventHandler(this.clear_btn_Click);
             // 
             // MainForm
             // 
@@ -324,7 +329,7 @@ namespace FilmsCatalog.UI
             this.Controls.Add(this.button3);
             this.Controls.Add(this.sort_combobox);
             this.Controls.Add(this.delete_btn);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.sort_btn);
             this.Controls.Add(this.search_btn);
             this.Controls.Add(this.search_textbox);
             this.Controls.Add(this.edit_btn);
@@ -356,7 +361,7 @@ namespace FilmsCatalog.UI
         private System.Windows.Forms.Label upload_lbl;
         private System.Windows.Forms.TextBox search_textbox;
         private System.Windows.Forms.Button search_btn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button sort_btn;
         private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.ComboBox sort_combobox;
         private System.Windows.Forms.Button button3;

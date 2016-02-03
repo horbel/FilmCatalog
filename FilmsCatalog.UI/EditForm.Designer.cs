@@ -117,8 +117,10 @@
             "Вестерн ",
             "Исторический "});
             this.category_combobox.BackColor = System.Drawing.Color.LightBlue;
+            this.category_combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.category_combobox.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.category_combobox.Items.AddRange(new object[] {
+            "Не выбрано",
             "Комедия",
             "Боевик",
             "Триллер",
@@ -128,16 +130,15 @@
             "Исторический ",
             "Фантастика ",
             "Мультфильм"});
-            this.category_combobox.Location = new System.Drawing.Point(105, 49);
+            this.category_combobox.Location = new System.Drawing.Point(100, 46);
             this.category_combobox.Name = "category_combobox";
             this.category_combobox.Size = new System.Drawing.Size(220, 22);
             this.category_combobox.TabIndex = 5;
-            this.category_combobox.Text = "-Выберите категорию-";
             // 
             // title_textbox
             // 
             this.title_textbox.BackColor = System.Drawing.Color.LightBlue;
-            this.title_textbox.Location = new System.Drawing.Point(105, 18);
+            this.title_textbox.Location = new System.Drawing.Point(100, 15);
             this.title_textbox.Name = "title_textbox";
             this.title_textbox.Size = new System.Drawing.Size(291, 20);
             this.title_textbox.TabIndex = 6;
@@ -167,7 +168,7 @@
             // year_textbox
             // 
             this.year_textbox.BackColor = System.Drawing.Color.LightBlue;
-            this.year_textbox.Location = new System.Drawing.Point(112, 83);
+            this.year_textbox.Location = new System.Drawing.Point(123, 79);
             this.year_textbox.Name = "year_textbox";
             this.year_textbox.Size = new System.Drawing.Size(213, 20);
             this.year_textbox.TabIndex = 10;
