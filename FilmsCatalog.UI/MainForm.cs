@@ -68,6 +68,10 @@ namespace FilmsCatalog.UI
                 .Where(f => f.Title == Film_list.SelectedItem.ToString())
                 .FirstOrDefault();
 
+                if(selectedFilm.PictureLocation != null)
+                    Film_pictbox.ImageLocation = selectedFilm.PictureLocation;
+                else
+                    Film_pictbox.ImageLocation = Application.StartupPath + "\\pictures\\default";
                 category_lbl.Text = selectedFilm.Category;
                 year_lbl.Text = selectedFilm.Year.ToString();
                 description_lbl.Text = selectedFilm.Description;

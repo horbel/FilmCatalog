@@ -38,9 +38,9 @@
             this.description_textbox = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.year_textbox = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.savePic_btn = new System.Windows.Forms.Button();
+            this.filmPicture_picturebox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.filmPicture_picturebox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -173,24 +173,26 @@
             this.year_textbox.Size = new System.Drawing.Size(213, 20);
             this.year_textbox.TabIndex = 10;
             // 
-            // button3
+            // savePic_btn
             // 
-            this.button3.BackColor = System.Drawing.Color.SandyBrown;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(427, 267);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(313, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Загрузить картинку";
-            this.button3.UseVisualStyleBackColor = false;
+            this.savePic_btn.BackColor = System.Drawing.Color.SandyBrown;
+            this.savePic_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.savePic_btn.Location = new System.Drawing.Point(427, 267);
+            this.savePic_btn.Name = "savePic_btn";
+            this.savePic_btn.Size = new System.Drawing.Size(313, 23);
+            this.savePic_btn.TabIndex = 11;
+            this.savePic_btn.Text = "Загрузить картинку";
+            this.savePic_btn.UseVisualStyleBackColor = false;
+            this.savePic_btn.Click += new System.EventHandler(this.savePic_btn_Click);
             // 
-            // pictureBox1
+            // filmPicture_picturebox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(427, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(313, 242);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.filmPicture_picturebox.Location = new System.Drawing.Point(427, 19);
+            this.filmPicture_picturebox.Name = "filmPicture_picturebox";
+            this.filmPicture_picturebox.Size = new System.Drawing.Size(313, 242);
+            this.filmPicture_picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.filmPicture_picturebox.TabIndex = 8;
+            this.filmPicture_picturebox.TabStop = false;
             // 
             // EditForm
             // 
@@ -199,10 +201,10 @@
             this.BackgroundImage = global::FilmsCatalog.UI.Properties.Resources.back3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(752, 398);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.savePic_btn);
             this.Controls.Add(this.year_textbox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.filmPicture_picturebox);
             this.Controls.Add(this.description_textbox);
             this.Controls.Add(this.title_textbox);
             this.Controls.Add(this.category_combobox);
@@ -215,7 +217,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Карточка фильма";
             this.Load += new System.EventHandler(this.EditForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmPicture_picturebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,9 +233,9 @@
         private System.Windows.Forms.ComboBox category_combobox;
         private System.Windows.Forms.TextBox title_textbox;
         private System.Windows.Forms.RichTextBox description_textbox;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox filmPicture_picturebox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox year_textbox;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button savePic_btn;
     }
 }

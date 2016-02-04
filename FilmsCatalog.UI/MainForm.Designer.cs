@@ -101,6 +101,7 @@ namespace FilmsCatalog.UI
             this.Film_pictbox.Location = new System.Drawing.Point(0, 0);
             this.Film_pictbox.Name = "Film_pictbox";
             this.Film_pictbox.Size = new System.Drawing.Size(306, 210);
+            this.Film_pictbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film_pictbox.TabIndex = 4;
             this.Film_pictbox.TabStop = false;
             // 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace FilmsCatalog.Model.Entities
 {
     [Serializable]
@@ -15,11 +16,13 @@ namespace FilmsCatalog.Model.Entities
         public string Category { get; set; }
         public string Year { get; set; }
         public DateTime UploadDate { get; set; } 
+        public string PictureLocation { get; set; }
         public Film()
         {
             Category = "Не выбрана";
             Year = "Не задан";            
-            UploadDate = DateTime.Now;
+            UploadDate = DateTime.Now;            
+
         }
     }
 }
