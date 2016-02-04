@@ -102,6 +102,21 @@
   <ItemGroup>
     <None Include="Resources\back3.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient_back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_red1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

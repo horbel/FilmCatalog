@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FilmsCatalog.Model.Repository;
 using FilmsCatalog.Model.Entities;
+using System.Drawing.Drawing2D;
+using System.Diagnostics;
 
 namespace FilmsCatalog.UI
 {
@@ -28,11 +30,42 @@ namespace FilmsCatalog.UI
             {
                 c.Visible = false;
             }
-
+            //foreach (Control c in controlpanel_panel.Controls)
+            //{
+            //    OvalForm(c as Control);
+            //}
+           
+            
             repository = new BinaryFilmRepository();
-            stackForCancelDelete = new Stack<Film>();
+            stackForCancelDelete = new Stack<Film>();           
+            
         }
 
+        void OvalForm(Control ctrl)
+        {
+            GraphicsPath gp = new GraphicsPath();
+            Graphics g = CreateGraphics();
+
+            //Создаем новый прямоуголник с размерами кнопки
+            Rectangle rect = ctrl.ClientRectangle;
+
+            //уменьшаем размеры прямоуголника
+            rect.Inflate(-2, -2);            
+            
+            //рисуем рамку для овальной кнопки
+            g.DrawEllipse(System.Drawing.Pens.Transparent,
+            rect);
+
+            rect.Inflate(1, 1);
+            //создаем эллипс
+            gp.AddEllipse(rect);
+            ctrl.Region = new Region(gp);
+
+
+            //высвобождаем память
+            g.Dispose();
+        }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             RefreshCurrentList(repository.Films);
@@ -42,11 +75,13 @@ namespace FilmsCatalog.UI
         public void RefreshCurrentList(IEnumerable<Film> filmParam)
         {
             Film_list.Items.Clear();
-            foreach (Film f in filmParam)
-            {
-                Film_list.Items.Add(f.Title);
-            }
-            edit_btn.Enabled = false;
+            if(filmParam.Count()!=0)
+                foreach (Film f in filmParam)
+                {
+                    if(f.Title!=null)
+                        Film_list.Items.Add(f.Title);
+                }
+            edit_btn.Enabled = false;            
             delete_btn.Enabled = false;
             //Film_list.SelectedItem = null;
         }
@@ -97,10 +132,10 @@ namespace FilmsCatalog.UI
             editForm = new EditForm(ref newFilm);
             DialogResult dr = editForm.ShowDialog();
             if (dr != DialogResult.OK)
-                repository.RemoveFilm(newFilm.FilmID);
+                repository.RemoveFilm(repository.Films.Last().FilmID); 
             RefreshCurrentList(repository.Films);
-            Film_list.SetSelected(repository.Films.Count() - 1, true);
-
+            if(repository.Films.Count()>=1)
+                Film_list.SetSelected(repository.Films.Count() - 1, true);
         }
 
         private void edit_btn_Click(object sender, EventArgs e)
@@ -175,6 +210,8 @@ namespace FilmsCatalog.UI
 
             if (pointFilms.Count != 0)
                 RefreshCurrentList(pointFilms);
+            else
+                MessageBox.Show("Ничего не найдено", "Результат поиска");
 
         }
 
@@ -222,10 +259,21 @@ namespace FilmsCatalog.UI
             }
             
         }
-
-
+        
         #endregion
 
+        private void search_textbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                search_btn_Click(sender, e);
+            }
+        }
 
+        private void online_btn_Click(object sender, EventArgs e)
+        {
+            if(Film_list.SelectedItem != null)
+             Process.Start("http://yandex.by/video/search?text="+Film_list.SelectedItem);
+        }
     }
 }

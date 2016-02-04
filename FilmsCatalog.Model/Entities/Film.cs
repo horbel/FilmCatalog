@@ -21,8 +21,8 @@ namespace FilmsCatalog.Model.Entities
         {
             Category = "Не выбрана";
             Year = "Не задан";            
-            UploadDate = DateTime.Now;            
-
+            UploadDate = DateTime.Now;
+            PictureLocation = null;
         }
     }
 }
