@@ -134,8 +134,8 @@ namespace FilmsCatalog.UI
             if (dr != DialogResult.OK)
                 repository.RemoveFilm(repository.Films.Last().FilmID); 
             RefreshCurrentList(repository.Films);
-            if(repository.Films.Count()>=1)
-                Film_list.SetSelected(repository.Films.Count() - 1, true);
+            //if(repository.Films.Count()>=1)
+            //    Film_list.SetSelected(repository.Films.Count() - 1, true);
         }
 
         private void edit_btn_Click(object sender, EventArgs e)

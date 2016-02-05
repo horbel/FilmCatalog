@@ -1,6 +1,5 @@
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\bin\Debug\FilmsCatalog.Tests.dll
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\bin\Debug\FilmsCatalog.Tests.pdb
-c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\bin\Debug\FilmsCatalog.Model.dll
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\bin\Debug\FilmsCatalog.UI.exe
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\bin\Debug\FilmsCatalog.Model.pdb
@@ -9,3 +8,7 @@ c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\Films
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\obj\Debug\FilmsCatalog.Tests.csprojResolveAssemblyReference.cache
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\obj\Debug\FilmsCatalog.Tests.dll
 c:\users\алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\obj\Debug\FilmsCatalog.Tests.pdb
+C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\bin\Debug\FilmsCatalog.Model.exe
+C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Tests\bin\Debug\HtmlAgilityPack.xml
