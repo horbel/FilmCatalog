@@ -32,7 +32,6 @@ namespace FilmsCatalog.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Film_list = new System.Windows.Forms.ListBox();
             this.category_lbl = new System.Windows.Forms.Label();
-            this.description_lbl = new System.Windows.Forms.Label();
             this.year_lbl = new System.Windows.Forms.Label();
             this.upload_lbl = new System.Windows.Forms.Label();
             this.search_textbox = new System.Windows.Forms.TextBox();
@@ -44,6 +43,7 @@ namespace FilmsCatalog.UI
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.infopanel_panel = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Film_pictbox = new System.Windows.Forms.PictureBox();
             this.controlpanel_panel = new System.Windows.Forms.Panel();
@@ -53,7 +53,7 @@ namespace FilmsCatalog.UI
             this.cancelDelete_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
             this.online_btn = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.description_lbl = new System.Windows.Forms.RichTextBox();
             this.infopanel_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Film_pictbox)).BeginInit();
             this.controlpanel_panel.SuspendLayout();
@@ -78,19 +78,9 @@ namespace FilmsCatalog.UI
             this.category_lbl.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.category_lbl.Location = new System.Drawing.Point(114, 231);
             this.category_lbl.Name = "category_lbl";
-            this.category_lbl.Size = new System.Drawing.Size(153, 16);
+            this.category_lbl.Size = new System.Drawing.Size(153, 28);
             this.category_lbl.TabIndex = 5;
             this.category_lbl.Text = "category";
-            // 
-            // description_lbl
-            // 
-            this.description_lbl.BackColor = System.Drawing.Color.Transparent;
-            this.description_lbl.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.description_lbl.Location = new System.Drawing.Point(0, 315);
-            this.description_lbl.Name = "description_lbl";
-            this.description_lbl.Size = new System.Drawing.Size(300, 127);
-            this.description_lbl.TabIndex = 6;
-            this.description_lbl.Text = "description";
             // 
             // year_lbl
             // 
@@ -98,7 +88,7 @@ namespace FilmsCatalog.UI
             this.year_lbl.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.year_lbl.Location = new System.Drawing.Point(131, 259);
             this.year_lbl.Name = "year_lbl";
-            this.year_lbl.Size = new System.Drawing.Size(108, 16);
+            this.year_lbl.Size = new System.Drawing.Size(108, 25);
             this.year_lbl.TabIndex = 8;
             this.year_lbl.Text = "year";
             // 
@@ -207,7 +197,8 @@ namespace FilmsCatalog.UI
             // infopanel_panel
             // 
             this.infopanel_panel.BackColor = System.Drawing.Color.PowderBlue;
-            this.infopanel_panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.infopanel_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.infopanel_panel.Controls.Add(this.description_lbl);
             this.infopanel_panel.Controls.Add(this.label6);
             this.infopanel_panel.Controls.Add(this.label4);
             this.infopanel_panel.Controls.Add(this.label1);
@@ -215,13 +206,21 @@ namespace FilmsCatalog.UI
             this.infopanel_panel.Controls.Add(this.category_lbl);
             this.infopanel_panel.Controls.Add(this.label2);
             this.infopanel_panel.Controls.Add(this.year_lbl);
-            this.infopanel_panel.Controls.Add(this.description_lbl);
             this.infopanel_panel.Controls.Add(this.upload_lbl);
             this.infopanel_panel.Controls.Add(this.Film_pictbox);
             this.infopanel_panel.Location = new System.Drawing.Point(284, 53);
             this.infopanel_panel.Name = "infopanel_panel";
             this.infopanel_panel.Size = new System.Drawing.Size(305, 460);
             this.infopanel_panel.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(3, 439);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(310, 1);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "label5";
             // 
             // label4
             // 
@@ -236,7 +235,7 @@ namespace FilmsCatalog.UI
             // 
             this.Film_pictbox.Location = new System.Drawing.Point(0, -2);
             this.Film_pictbox.Name = "Film_pictbox";
-            this.Film_pictbox.Size = new System.Drawing.Size(305, 230);
+            this.Film_pictbox.Size = new System.Drawing.Size(303, 230);
             this.Film_pictbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Film_pictbox.TabIndex = 4;
             this.Film_pictbox.TabStop = false;
@@ -340,14 +339,16 @@ namespace FilmsCatalog.UI
             this.online_btn.UseVisualStyleBackColor = false;
             this.online_btn.Click += new System.EventHandler(this.online_btn_Click);
             // 
-            // label6
+            // description_lbl
             // 
-            this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(3, 439);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(310, 1);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "label5";
+            this.description_lbl.BackColor = System.Drawing.Color.PowderBlue;
+            this.description_lbl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.description_lbl.Font = new System.Drawing.Font("Tahoma", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.description_lbl.Location = new System.Drawing.Point(3, 309);
+            this.description_lbl.Name = "description_lbl";
+            this.description_lbl.Size = new System.Drawing.Size(295, 127);
+            this.description_lbl.TabIndex = 26;
+            this.description_lbl.Text = "";
             // 
             // MainForm
             // 
@@ -388,7 +389,6 @@ namespace FilmsCatalog.UI
         private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.PictureBox Film_pictbox;
         private System.Windows.Forms.Label category_lbl;
-        private System.Windows.Forms.Label description_lbl;
         private System.Windows.Forms.Label year_lbl;
         private System.Windows.Forms.Label upload_lbl;
         private System.Windows.Forms.TextBox search_textbox;
@@ -407,6 +407,7 @@ namespace FilmsCatalog.UI
         private System.Windows.Forms.Panel controlpanel_panel;
         private System.Windows.Forms.Button online_btn;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RichTextBox description_lbl;
     }
 }
 

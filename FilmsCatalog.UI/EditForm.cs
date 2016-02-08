@@ -117,7 +117,7 @@ namespace FilmsCatalog.UI
             {                
                 string location = fileDialog.FileName.ToString();
                 destin = Application.StartupPath + "\\pictures\\" + filmForEdit.Title + "_pic";
-                var newImage = ResizeOrigImg((Image.FromFile(location)), 400, 300);
+                var newImage = ResizeOrigImg((Image.FromFile(location)), 500, 300);
                 newImage.Save(destin);
                 //CopyFile(location, destin);
                 filmPicture_picturebox.ImageLocation = destin;

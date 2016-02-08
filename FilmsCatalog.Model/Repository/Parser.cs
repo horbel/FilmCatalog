@@ -66,8 +66,10 @@ namespace FilmsCatalog.Model.Repository
         public static void Main()
         {
             //Console.WriteLine(GetText1());
-            GetText2();
+            //GetText2();
             //Process.Start("http://yandex.ru/yandsearch?text=kinogo.co Один дома 1990 &p=0&numdoc=10");
+
+            
 
         }
     }
