@@ -43,6 +43,7 @@ namespace FilmsCatalog.UI
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.infopanel_panel = new System.Windows.Forms.Panel();
+            this.description_lbl = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Film_pictbox = new System.Windows.Forms.PictureBox();
@@ -53,7 +54,6 @@ namespace FilmsCatalog.UI
             this.cancelDelete_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
             this.online_btn = new System.Windows.Forms.Button();
-            this.description_lbl = new System.Windows.Forms.RichTextBox();
             this.infopanel_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Film_pictbox)).BeginInit();
             this.controlpanel_panel.SuspendLayout();
@@ -198,6 +198,7 @@ namespace FilmsCatalog.UI
             // 
             this.infopanel_panel.BackColor = System.Drawing.Color.PowderBlue;
             this.infopanel_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.infopanel_panel.Controls.Add(this.online_btn);
             this.infopanel_panel.Controls.Add(this.description_lbl);
             this.infopanel_panel.Controls.Add(this.label6);
             this.infopanel_panel.Controls.Add(this.label4);
@@ -212,6 +213,17 @@ namespace FilmsCatalog.UI
             this.infopanel_panel.Name = "infopanel_panel";
             this.infopanel_panel.Size = new System.Drawing.Size(305, 460);
             this.infopanel_panel.TabIndex = 21;
+            // 
+            // description_lbl
+            // 
+            this.description_lbl.BackColor = System.Drawing.Color.PowderBlue;
+            this.description_lbl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.description_lbl.Font = new System.Drawing.Font("Tahoma", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.description_lbl.Location = new System.Drawing.Point(3, 309);
+            this.description_lbl.Name = "description_lbl";
+            this.description_lbl.Size = new System.Drawing.Size(295, 127);
+            this.description_lbl.TabIndex = 26;
+            this.description_lbl.Text = "";
             // 
             // label6
             // 
@@ -331,24 +343,13 @@ namespace FilmsCatalog.UI
             this.online_btn.BackColor = System.Drawing.Color.PaleGreen;
             this.online_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.online_btn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.online_btn.Location = new System.Drawing.Point(284, 6);
+            this.online_btn.Location = new System.Drawing.Point(-79, 3);
             this.online_btn.Name = "online_btn";
             this.online_btn.Size = new System.Drawing.Size(302, 41);
             this.online_btn.TabIndex = 25;
             this.online_btn.Text = "Смотреть онлайн!";
             this.online_btn.UseVisualStyleBackColor = false;
             this.online_btn.Click += new System.EventHandler(this.online_btn_Click);
-            // 
-            // description_lbl
-            // 
-            this.description_lbl.BackColor = System.Drawing.Color.PowderBlue;
-            this.description_lbl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.description_lbl.Font = new System.Drawing.Font("Tahoma", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.description_lbl.Location = new System.Drawing.Point(3, 309);
-            this.description_lbl.Name = "description_lbl";
-            this.description_lbl.Size = new System.Drawing.Size(295, 127);
-            this.description_lbl.TabIndex = 26;
-            this.description_lbl.Text = "";
             // 
             // MainForm
             // 
@@ -357,7 +358,6 @@ namespace FilmsCatalog.UI
             this.BackColor = System.Drawing.Color.LightBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(602, 585);
-            this.Controls.Add(this.online_btn);
             this.Controls.Add(this.controlpanel_panel);
             this.Controls.Add(this.infopanel_panel);
             this.Controls.Add(this.showAll_btn);

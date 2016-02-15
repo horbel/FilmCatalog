@@ -13,3 +13,6 @@ C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\Films
 C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\bin\Debug\HtmlAgilityPack.dll
 C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.UI\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\filmCatalog_newDesign\FilmCatalog\FilmsCatalog.UI\bin\Debug\FilmsCatalog.UI.exe.config
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\filmCatalog_newDesign\FilmCatalog\FilmsCatalog.UI\obj\Debug\FilmsCatalog.UI.exe
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\filmCatalog_newDesign\FilmCatalog\FilmsCatalog.UI\obj\Debug\FilmsCatalog.UI.pdb
