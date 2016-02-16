@@ -6,3 +6,11 @@ C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\Films
 C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Model\obj\Debug\FilmsCatalog.Model.csprojResolveAssemblyReference.cache
 C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Model\bin\Debug\FilmsCatalog.Model.exe
 C:\Users\Алексей\documents\visual studio 2015\Projects\FilmsCatalog\FilmsCatalog.Model\obj\Debug\FilmsCatalog.Model.exe
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\filmCatalog_newDesign\FilmCatalog\FilmsCatalog.Model\bin\Debug\FilmsCatalog.Model.exe
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\filmCatalog_newDesign\FilmCatalog\FilmsCatalog.Model\bin\Debug\FilmsCatalog.Model.pdb
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\filmCatalog_newDesign\FilmCatalog\FilmsCatalog.Model\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\filmCatalog_newDesign\FilmCatalog\FilmsCatalog.Model\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\filmCatalog_newDesign\FilmCatalog\FilmsCatalog.Model\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\filmCatalog_newDesign\FilmCatalog\FilmsCatalog.Model\obj\Debug\FilmsCatalog.Model.csprojResolveAssemblyReference.cache
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\filmCatalog_newDesign\FilmCatalog\FilmsCatalog.Model\obj\Debug\FilmsCatalog.Model.exe
+C:\Users\Алексей\Documents\Visual Studio 2015\Projects\filmCatalog_newDesign\FilmCatalog\FilmsCatalog.Model\obj\Debug\FilmsCatalog.Model.pdb

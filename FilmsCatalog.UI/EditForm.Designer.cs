@@ -52,7 +52,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 22);
+            this.label1.Size = new System.Drawing.Size(82, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Название";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -86,7 +86,7 @@
             this.cancel_btn.BackColor = System.Drawing.Color.Salmon;
             this.cancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cancel_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancel_btn.Location = new System.Drawing.Point(613, 309);
+            this.cancel_btn.Location = new System.Drawing.Point(473, 309);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(96, 43);
             this.cancel_btn.TabIndex = 3;
@@ -101,7 +101,7 @@
             this.save_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.save_btn.Location = new System.Drawing.Point(12, 309);
             this.save_btn.Name = "save_btn";
-            this.save_btn.Size = new System.Drawing.Size(585, 43);
+            this.save_btn.Size = new System.Drawing.Size(455, 43);
             this.save_btn.TabIndex = 4;
             this.save_btn.Text = "Сохранить изменения";
             this.save_btn.UseVisualStyleBackColor = false;
@@ -134,7 +134,7 @@
             "Мультфильм"});
             this.category_combobox.Location = new System.Drawing.Point(94, 48);
             this.category_combobox.Name = "category_combobox";
-            this.category_combobox.Size = new System.Drawing.Size(192, 22);
+            this.category_combobox.Size = new System.Drawing.Size(203, 22);
             this.category_combobox.TabIndex = 5;
             // 
             // title_textbox
@@ -183,7 +183,7 @@
             this.savePic_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.savePic_btn.Location = new System.Drawing.Point(396, 267);
             this.savePic_btn.Name = "savePic_btn";
-            this.savePic_btn.Size = new System.Drawing.Size(313, 23);
+            this.savePic_btn.Size = new System.Drawing.Size(170, 23);
             this.savePic_btn.TabIndex = 11;
             this.savePic_btn.Text = "Загрузить картинку";
             this.savePic_btn.UseVisualStyleBackColor = false;
@@ -194,7 +194,7 @@
             this.filmPicture_picturebox.BackColor = System.Drawing.Color.LightBlue;
             this.filmPicture_picturebox.Location = new System.Drawing.Point(396, 19);
             this.filmPicture_picturebox.Name = "filmPicture_picturebox";
-            this.filmPicture_picturebox.Size = new System.Drawing.Size(313, 242);
+            this.filmPicture_picturebox.Size = new System.Drawing.Size(170, 242);
             this.filmPicture_picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.filmPicture_picturebox.TabIndex = 8;
             this.filmPicture_picturebox.TabStop = false;
@@ -205,7 +205,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::FilmsCatalog.UI.Properties.Resources.back3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(724, 367);
+            this.ClientSize = new System.Drawing.Size(735, 367);
             this.Controls.Add(this.savePic_btn);
             this.Controls.Add(this.year_textbox);
             this.Controls.Add(this.label4);

@@ -34,11 +34,18 @@ namespace FilmsCatalog.UI
             //{
             //    OvalForm(c as Control);
             //}
-           
-            
+
+             
             repository = new BinaryFilmRepository();
             stackForCancelDelete = new Stack<Film>();           
             
+        }
+
+        //убрать рамку
+        void buttonsSets()
+        {
+            AddFiml_bnt.FlatAppearance.BorderSize = 0;
+            AddFiml_bnt.FlatStyle = FlatStyle.Flat ;
         }
 
         void OvalForm(Control ctrl)
@@ -274,6 +281,11 @@ namespace FilmsCatalog.UI
         {
             if(Film_list.SelectedItem != null)
              Process.Start("http://yandex.by/video/search?text="+Film_list.SelectedItem);
+        }
+
+        private void AddFiml_bnt_MouseEnter(object sender, EventArgs e)
+        {
+            online_btn.Focus();
         }
     }
 }
