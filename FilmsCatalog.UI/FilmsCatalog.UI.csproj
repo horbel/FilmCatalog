@@ -103,6 +103,7 @@
     <None Include="Resources\back3.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\back_editForm" />
     <None Include="Resources\gradient_back.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +123,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\back_panel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_film.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_editForm.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_edit2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty_film.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -47,24 +47,26 @@
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Location = new System.Drawing.Point(15, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 22);
+            this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Название";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
+            this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(12, 48);
+            this.label2.Location = new System.Drawing.Point(15, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 22);
+            this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Категория";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -85,8 +87,8 @@
             // 
             this.cancel_btn.BackColor = System.Drawing.Color.Salmon;
             this.cancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cancel_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cancel_btn.Location = new System.Drawing.Point(473, 309);
+            this.cancel_btn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cancel_btn.Location = new System.Drawing.Point(470, 309);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(96, 43);
             this.cancel_btn.TabIndex = 3;
@@ -98,10 +100,10 @@
             // 
             this.save_btn.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.save_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.save_btn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_btn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.save_btn.Location = new System.Drawing.Point(12, 309);
             this.save_btn.Name = "save_btn";
-            this.save_btn.Size = new System.Drawing.Size(455, 43);
+            this.save_btn.Size = new System.Drawing.Size(445, 43);
             this.save_btn.TabIndex = 4;
             this.save_btn.Text = "Сохранить изменения";
             this.save_btn.UseVisualStyleBackColor = false;
@@ -132,23 +134,23 @@
             "Исторический ",
             "Фантастика ",
             "Мультфильм"});
-            this.category_combobox.Location = new System.Drawing.Point(94, 48);
+            this.category_combobox.Location = new System.Drawing.Point(94, 53);
             this.category_combobox.Name = "category_combobox";
-            this.category_combobox.Size = new System.Drawing.Size(203, 22);
+            this.category_combobox.Size = new System.Drawing.Size(178, 22);
             this.category_combobox.TabIndex = 5;
             // 
             // title_textbox
             // 
-            this.title_textbox.BackColor = System.Drawing.Color.LightBlue;
+            this.title_textbox.BackColor = System.Drawing.Color.Sienna;
             this.title_textbox.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.title_textbox.Location = new System.Drawing.Point(89, 20);
+            this.title_textbox.Location = new System.Drawing.Point(89, 25);
             this.title_textbox.Name = "title_textbox";
             this.title_textbox.Size = new System.Drawing.Size(291, 22);
             this.title_textbox.TabIndex = 6;
             // 
             // description_textbox
             // 
-            this.description_textbox.BackColor = System.Drawing.Color.LightBlue;
+            this.description_textbox.BackColor = System.Drawing.Color.Sienna;
             this.description_textbox.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.description_textbox.Location = new System.Drawing.Point(12, 132);
             this.description_textbox.Name = "description_textbox";
@@ -158,21 +160,22 @@
             // 
             // label4
             // 
+            this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(12, 76);
+            this.label4.Location = new System.Drawing.Point(15, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 22);
+            this.label4.Size = new System.Drawing.Size(94, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "Год выпуска";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // year_textbox
             // 
-            this.year_textbox.BackColor = System.Drawing.Color.LightBlue;
+            this.year_textbox.BackColor = System.Drawing.Color.Sienna;
             this.year_textbox.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.year_textbox.Location = new System.Drawing.Point(112, 76);
+            this.year_textbox.Location = new System.Drawing.Point(112, 85);
             this.year_textbox.Name = "year_textbox";
             this.year_textbox.Size = new System.Drawing.Size(213, 22);
             this.year_textbox.TabIndex = 10;
@@ -192,6 +195,8 @@
             // filmPicture_picturebox
             // 
             this.filmPicture_picturebox.BackColor = System.Drawing.Color.LightBlue;
+            this.filmPicture_picturebox.BackgroundImage = global::FilmsCatalog.UI.Properties.Resources.empty_film;
+            this.filmPicture_picturebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.filmPicture_picturebox.Location = new System.Drawing.Point(396, 19);
             this.filmPicture_picturebox.Name = "filmPicture_picturebox";
             this.filmPicture_picturebox.Size = new System.Drawing.Size(170, 242);
@@ -203,9 +208,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::FilmsCatalog.UI.Properties.Resources.back3;
+            this.BackgroundImage = global::FilmsCatalog.UI.Properties.Resources.back_edit2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(735, 367);
+            this.ClientSize = new System.Drawing.Size(583, 367);
             this.Controls.Add(this.savePic_btn);
             this.Controls.Add(this.year_textbox);
             this.Controls.Add(this.label4);

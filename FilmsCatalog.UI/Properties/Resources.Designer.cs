@@ -83,6 +83,36 @@ namespace FilmsCatalog.UI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_edit2 {
+            get {
+                object obj = ResourceManager.GetObject("back_edit2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back_editForm {
+            get {
+                object obj = ResourceManager.GetObject("back_editForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back_film {
+            get {
+                object obj = ResourceManager.GetObject("back_film", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back_metal {
             get {
                 object obj = ResourceManager.GetObject("back_metal", resourceCulture);
@@ -126,6 +156,16 @@ namespace FilmsCatalog.UI.Properties {
         internal static System.Drawing.Bitmap database_red1 {
             get {
                 object obj = ResourceManager.GetObject("database_red1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap empty_film {
+            get {
+                object obj = ResourceManager.GetObject("empty_film", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

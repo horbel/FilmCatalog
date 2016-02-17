@@ -130,6 +130,15 @@
   <data name="back3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="back_edit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_edit2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_editForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_editForm.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_film" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_film.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="back_metal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back_metal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,6 +147,9 @@
   </data>
   <data name="database_red1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\database_red1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="empty_film" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\empty_film.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gradient_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gradient_back.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
