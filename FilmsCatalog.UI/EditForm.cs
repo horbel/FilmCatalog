@@ -42,7 +42,16 @@ namespace FilmsCatalog.UI
                 filmForEdit.Year = year_textbox.Text.ToString();
                 filmForEdit.Description = description_textbox.Text;
                 filmForEdit.Category = category_combobox.Text;
+
+
+
+                
+
+                newImage.Save(destin);
                 filmForEdit.PictureLocation = destin;
+                //CopyFile(location, destin);
+
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -59,7 +68,7 @@ namespace FilmsCatalog.UI
                 MessageBox.Show("Название фильма не может быть пустым", "Ошибка");
                 flag = false;
             }
-            if (!(new Regex(@"^\d{4}$").IsMatch(year_textbox.Text) || (year_textbox.Text == "Не задан")))
+            if (!(new Regex(@"^(19||20||21)[0-9][0-9]$").IsMatch(year_textbox.Text) || (year_textbox.Text == "")))
             {
                 MessageBox.Show("Введён некорректный год выпуска", "Ошибка");
                 flag = false;
@@ -108,21 +117,23 @@ namespace FilmsCatalog.UI
             return result;
         }
 
-        private string destin;
+
+        private string destin = Application.StartupPath + "\\pictures\\" + "empty_fiml_pic";
+        Image newImage = Properties.Resources.empty_film;
         private void savePic_btn_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Jpg Files|*.jpg|Jpeg Files|*.jpeg|Gif Files|*.gif|Bmp Files|*.bmp|Png Files|*.png";
+            //fiml was found
             if(fileDialog.ShowDialog()==DialogResult.OK)
             {                
                 string location = fileDialog.FileName.ToString();
                 destin = Application.StartupPath + "\\pictures\\" + filmForEdit.Title + "_pic";
-                var newImage = ResizeOrigImg((Image.FromFile(location)), 500, 300);
-                newImage.Save(destin);
-                //CopyFile(location, destin);
-                filmPicture_picturebox.ImageLocation = destin;
+                newImage = ResizeOrigImg((Image.FromFile(location)), 500, 300);
+                filmPicture_picturebox.Image = newImage;
                 
             }
+
 
         }
     }

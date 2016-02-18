@@ -113,16 +113,6 @@ namespace FilmsCatalog.UI.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap back_metal {
-            get {
-                object obj = ResourceManager.GetObject("back_metal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap back_panel {
             get {
                 object obj = ResourceManager.GetObject("back_panel", resourceCulture);
@@ -176,6 +166,26 @@ namespace FilmsCatalog.UI.Properties {
         internal static System.Drawing.Bitmap gradient_back {
             get {
                 object obj = ResourceManager.GetObject("gradient_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap text_linespacing {
+            get {
+                object obj = ResourceManager.GetObject("text_linespacing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap understanding {
+            get {
+                object obj = ResourceManager.GetObject("understanding", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

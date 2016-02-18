@@ -136,6 +136,12 @@
   <ItemGroup>
     <None Include="Resources\empty_film.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\understanding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_linespacing.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

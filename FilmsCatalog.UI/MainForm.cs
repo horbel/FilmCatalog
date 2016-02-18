@@ -90,6 +90,7 @@ namespace FilmsCatalog.UI
                 }
             edit_btn.Enabled = false;            
             delete_btn.Enabled = false;
+            Film_pictbox.Image = null;
             //Film_list.SelectedItem = null;
         }
 
@@ -113,12 +114,13 @@ namespace FilmsCatalog.UI
                 if(selectedFilm.PictureLocation != null)
                     Film_pictbox.ImageLocation = selectedFilm.PictureLocation;
                 else
-                    Film_pictbox.ImageLocation = Application.StartupPath + "\\pictures\\default";
+                    Film_pictbox.ImageLocation = Application.StartupPath + "\\pictures\\empty_film";
                 category_lbl.Text = selectedFilm.Category;
                 year_lbl.Text = selectedFilm.Year.ToString();
                 description_lbl.Text = selectedFilm.Description;
                 upload_lbl.Text = selectedFilm.UploadDate.ToString(new CultureInfo("en-GB"));
             }
+            
         }
 
         private void edit_btn_EnabledChanged(object sender, EventArgs e)
@@ -227,7 +229,7 @@ namespace FilmsCatalog.UI
 
             repository.AddFilm(stackForCancelDelete.Pop());
             RefreshCurrentList(repository.Films);
-            Film_list.SetSelected(Film_list.Items.Count - 1, true);
+            //Film_list.SetSelected(Film_list.Items.Count - 1, true);
 
             if (stackForCancelDelete.Count == 0)
                 (sender as Button).Enabled = false;
@@ -242,15 +244,18 @@ namespace FilmsCatalog.UI
             {
 
                 case 0: //by title
+                    
 
-                    //List<string> tempFilms = new List<string>();
-                    //List<string> tempFilms2 = new List<string>();
-                    //foreach (string item in Film_list.Items)
-                    //    tempFilms.Add(item.ToString());
-                    //IEnumerable<string> sortedFimls =  tempFilms.OrderBy(s => s);
+                    //сортирует только найденное
+                    //List<string> currentList = new List<string>();
+                    //if(Film_list.Items.Count !=0 )
+                    //    foreach(var film in Film_list.Items)
+                    //    {
+                    //        currentList.Add(film.ToString());
+                    //    }                    
                     //Film_list.Items.Clear();
-                    //Film_list.Items.AddRange(sortedFimls.ToArray<object>());
-                    //break;
+                    //Film_list.Items.AddRange(currentList.OrderBy(x => x).ToArray<object>());
+
 
                     repository.SortByTitle(descending);
                     RefreshCurrentList(repository.Films);

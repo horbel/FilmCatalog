@@ -69,42 +69,44 @@ namespace FilmsCatalog.UI
             this.Film_list.ItemHeight = 22;
             this.Film_list.Location = new System.Drawing.Point(68, 67);
             this.Film_list.Name = "Film_list";
-            this.Film_list.Size = new System.Drawing.Size(384, 422);
+            this.Film_list.Size = new System.Drawing.Size(384, 444);
             this.Film_list.TabIndex = 0;
             this.Film_list.SelectedIndexChanged += new System.EventHandler(this.Film_list_SelectedIndexChanged);
             // 
             // search_textbox
             // 
-            this.search_textbox.BackColor = System.Drawing.Color.LightSalmon;
-            this.search_textbox.Location = new System.Drawing.Point(163, 14);
+            this.search_textbox.BackColor = System.Drawing.Color.SandyBrown;
+            this.search_textbox.Location = new System.Drawing.Point(106, 16);
             this.search_textbox.Name = "search_textbox";
-            this.search_textbox.Size = new System.Drawing.Size(289, 20);
+            this.search_textbox.Size = new System.Drawing.Size(346, 20);
             this.search_textbox.TabIndex = 10;
             this.search_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.search_textbox_KeyDown);
             // 
             // search_btn
             // 
-            this.search_btn.BackColor = System.Drawing.Color.Chocolate;
+            this.search_btn.BackColor = System.Drawing.Color.DarkOrange;
+            this.search_btn.BackgroundImage = global::FilmsCatalog.UI.Properties.Resources.understanding;
+            this.search_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.search_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.search_btn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.search_btn.Location = new System.Drawing.Point(68, 15);
+            this.search_btn.Location = new System.Drawing.Point(68, 16);
             this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(74, 20);
+            this.search_btn.Size = new System.Drawing.Size(32, 20);
             this.search_btn.TabIndex = 11;
-            this.search_btn.Text = "Поиск :";
             this.search_btn.UseVisualStyleBackColor = false;
             this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // sort_btn
             // 
-            this.sort_btn.BackColor = System.Drawing.Color.Chocolate;
+            this.sort_btn.BackColor = System.Drawing.Color.DarkOrange;
+            this.sort_btn.BackgroundImage = global::FilmsCatalog.UI.Properties.Resources.text_linespacing;
+            this.sort_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sort_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sort_btn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sort_btn.Location = new System.Drawing.Point(476, 15);
+            this.sort_btn.Location = new System.Drawing.Point(476, 16);
             this.sort_btn.Name = "sort_btn";
-            this.sort_btn.Size = new System.Drawing.Size(127, 20);
+            this.sort_btn.Size = new System.Drawing.Size(32, 22);
             this.sort_btn.TabIndex = 13;
-            this.sort_btn.Text = "Сортировать по ";
             this.sort_btn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.sort_btn.UseVisualStyleBackColor = false;
             this.sort_btn.Click += new System.EventHandler(this.sort_btn_Click);
@@ -118,12 +120,12 @@ namespace FilmsCatalog.UI
             this.sort_combobox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.sort_combobox.ItemHeight = 14;
             this.sort_combobox.Items.AddRange(new object[] {
-            "Названию",
-            "Году выпуска",
-            "Дате добавления"});
-            this.sort_combobox.Location = new System.Drawing.Point(613, 14);
+            "По названию",
+            "По году выпуска",
+            "По дате добавления"});
+            this.sort_combobox.Location = new System.Drawing.Point(514, 16);
             this.sort_combobox.Name = "sort_combobox";
-            this.sort_combobox.Size = new System.Drawing.Size(147, 22);
+            this.sort_combobox.Size = new System.Drawing.Size(185, 22);
             this.sort_combobox.TabIndex = 15;
             // 
             // online_btn
@@ -235,7 +237,7 @@ namespace FilmsCatalog.UI
             this.infopanel_panel.Controls.Add(this.label3);
             this.infopanel_panel.Location = new System.Drawing.Point(477, 304);
             this.infopanel_panel.Name = "infopanel_panel";
-            this.infopanel_panel.Size = new System.Drawing.Size(283, 205);
+            this.infopanel_panel.Size = new System.Drawing.Size(283, 207);
             this.infopanel_panel.TabIndex = 21;
             // 
             // description_lbl
